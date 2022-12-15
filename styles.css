@@ -21,10 +21,11 @@ body {
 }
 
 .content-div {
-    width: 600px;
+    width: 800px;
     height: 600px;
     background: white;
     margin: auto;
+    position: relative;
 }
 
 .control-button {
@@ -46,4 +47,11 @@ image {
 
 .absolute {
     position: absolute;
+}
+
+.delete-button {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    z-index: 111;
 }
