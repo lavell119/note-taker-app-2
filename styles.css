@@ -25,7 +25,7 @@ body {
     height: 600px;
     background: white;
     margin: auto;
-    position: relative;
+
 }
 
 .control-button {
@@ -37,8 +37,7 @@ body {
     height: 70px;
     width: 400px;
     background: red;
-    margin: auto;
-    position: absolute;
+    text-align: center;
 }
 
 image {
@@ -57,5 +56,4 @@ image {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: yellow;
 }

@@ -72,13 +72,19 @@ let createSubmitField=function(type){
   contentEle.appendChild(eleDiv)
 }
 
+//Print Page function
+let printPDF=function(){
+    $('#print-btn').click(function(){
+    $('.content-div').printThis()
+    })
+}
 
 
 let addTitle=function(){
   createSubmitField('H1')
 }
 
-let addSubTitle=function(){
+let addSubtitle=function(){
   createSubmitField('H3')   
 }
 
@@ -86,3 +92,10 @@ let addParagraph=function(){
   createSubmitField('P')
 }
 
+let addPage = function(){
+  contentEle.style.height = (contentEle.offsetHeight + 50) + "px"
+}
+
+let decPage = function(){
+  contentEle.style.height = (contentEle.offsetHeight - 50) + "px"
+}
