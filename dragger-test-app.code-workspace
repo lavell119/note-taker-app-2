@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../note-taker-app/jqueryui"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "dragger-test-app"
+	}
+}
