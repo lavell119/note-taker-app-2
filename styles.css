@@ -49,9 +49,13 @@ image {
     position: absolute;
 }
 
-.delete-button {
+.delete-btn {
     height: 15px;
     width: 15px;
-    cursor: pointer;
-    z-index: 111;
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: yellow;
 }
