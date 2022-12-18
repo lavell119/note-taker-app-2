@@ -101,6 +101,11 @@ let decPage = function(){
   contentEle.style.height = (contentEle.offsetHeight - 50) + "px"
 }
 
+let complete = function() {
+  let deleteBtns = document.querySelectorAll('.delete-btn')
+  deleteBtns.forEach(btn => btn.remove())
+}
+
 //Add arrow function
  let addArrow = function(){
   const arrowWrapper=document.createElement('div')
