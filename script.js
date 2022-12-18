@@ -74,10 +74,11 @@ let createSubmitField=function(type){
 
 //Print Page function
 let printPDF=function(){
-    $('#print-btn').click(function(){
-    $('.content-div').printThis()
-    })
-}
+      $(contentEle).printThis()
+
+ 
+    }
+
 
 
 let addTitle=function(){
@@ -98,4 +99,49 @@ let addPage = function(){
 
 let decPage = function(){
   contentEle.style.height = (contentEle.offsetHeight - 50) + "px"
+}
+
+//Add arrow function
+ let addArrow = function(){
+  const arrowWrapper=document.createElement('div')
+  const arrow=document.createElement('img')
+  arrowWrapper.classList.add('arrow-wrapper')
+  arrowWrapper.classList.add('absolute')
+  arrow.classList.add('arrow')
+  arrow.classList.add('absolute')
+  arrow.src="arrow.png"
+  const deleteBtn = document.createElement('div')
+      deleteBtn.innerHTML="&#10006;"
+      deleteBtn.classList.add('delete-btn')
+      
+  arrowWrapper.appendChild(deleteBtn)
+  arrowWrapper.appendChild(arrow)
+  contentEle.appendChild(arrowWrapper)
+  deleteBtn.addEventListener('click', () => {
+      let btn=deleteBtn 
+      $(btn).parent().remove()
+  })
+  $(arrowWrapper).draggable({
+          containment: "parent"
+        })
+
+  // $(arrowWrapper).draggable()
+  // $(arrow).resizable()
+
+  let tmpAnimation = 0
+  $(arrowWrapper).click(function() {
+      var element = $(arrowWrapper)
+      tmpAnimation = tmpAnimation + 10
+
+      $({degrees: tmpAnimation-10}).animate({degrees: tmpAnimation}, {
+          duration: 1000,
+          step: function (now) {
+              element.css({
+                  transform: 'rotate(' + now + 'deg)'
+              })
+          }
+      })
+
+  })
+
 }

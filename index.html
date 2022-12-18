@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dragger Test App</title>
+    <title>Note Taker App 2</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="jqueryui/jquery-ui.css"><link rel="stylesheet" href="jqueryui/jquery-ui.structure.css">
 <link rel="stylesheet" href="jqueryui/jquery-ui.theme.css">
@@ -19,12 +19,9 @@
         </button>
         <button class="control-button" id="print-btn" onclick=printPDF()>print 
         </button>
-        <button class="control-button" id="add-ele-div" onclick=addTitle()>+ page
-        </button>
-        <button class="control-button" id="add-subtitle" onclick=addSubtitle()> - page
-        </button>
+        <button id="add-arrow" onClick=addArrow()>+ arrow</button>
         <button id="add-page-height" onClick=addPage()>+<br>Page</button>
-        <button id="dev-page-height" onClick=decPage()>-<br>Page</button>
+        <button id="dec-page-height" onClick=decPage()>-<br>Page</button>
         <input type="file" id="add-img">
 
     </div>
