@@ -150,3 +150,59 @@ let complete = function() {
   })
 
 }
+
+let addBox = function() {
+  const box = document.createElement('div')
+  box.classList.add('box')
+  const form = document.createElement('form')
+  const boxInput=document.createElement('textarea')
+  const button = document.createElement('button')
+  //Create bold button
+  const boldBtn=document.createElement('input')
+  boldBtn.type='checkbox'
+  boldBtn.classList.add('bold-btn')
+  button.innerText='Submit'
+  boldBtn.innerText= 'Bold'
+  //Append boldBtn to form
+  form.appendChild(button)
+  form.appendChild(boxInput)
+  let isBold=''
+  boldBtn.addEventListener('click', () => {
+      $(boldBtn).change(function(){
+          if(this.checked === true)
+          {isBold ='true'}
+      })
+  })
+  form.appendChild(boldBtn)
+  form.addEventListener('submit', function(e){
+      const paragraph=document.createElement('p')
+      e.preventDefault()
+      box.remove()
+      const box2=document.createElement('span')
+      paragraph.innerHTML=boxInput.value
+      box2.classList.add('text-box')
+      if(isBold==='true'){
+          box2.classList.add('bold')
+      }
+      box2.appendChild(paragraph)
+      box2.addEventListener('dblclick', function(){
+          box2.classList.toggle("hide")
+      })
+      //Create delete button
+      const deleteBtn = document.createElement('div')
+      deleteBtn.innerHTML="&#10006;"
+      deleteBtn.classList.add('delete-btn')
+      deleteBtn.addEventListener('click', () => {
+      let btn=deleteBtn 
+      $(btn).parent().remove()
+  })
+      box2.appendChild(deleteBtn)
+      contentEle.appendChild(box2)
+
+      $(box2).draggable()
+
+  })
+  box.appendChild(form)
+  contentEle.appendChild(box)
+  $(box).resizable()
+}
