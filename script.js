@@ -26,15 +26,16 @@ addImgBtn.addEventListener("change", () => {
 });
 
 //Append Ele-Div Master function
-let createSubmitField=function(type){
-  elementType= type
+let createSubmitField=function(type, title){
+  elementType = type
+  elementTitle = title
   const eleDiv =document.createElement('div')
   eleDiv.classList.add('ele-div')
   eleDiv.classList.add('submit-field')
   const submitField=document.createElement('div')
   const inputForm=document.createElement('form')
   const eleTitle=document.createElement('h3')
-  eleTitle.innerText=elementType + ' Content'
+  eleTitle.innerText=elementTitle + ' content'
   eleTitle.classList.add('ele-title')
   eleDiv.appendChild(eleTitle)
   //Create text-area for input box
@@ -82,15 +83,15 @@ let printPDF=function(){
 
 
 let addTitle=function(){
-  createSubmitField('H1')
+  createSubmitField('H1', 'Title')
 }
 
 let addSubtitle=function(){
-  createSubmitField('H3')   
+  createSubmitField('H3', 'Subtitle')   
 }
 
 let addParagraph=function(){
-  createSubmitField('P')
+  createSubmitField('P', 'Paragraph')
 }
 
 let addPage = function(){
