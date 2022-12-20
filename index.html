@@ -11,19 +11,23 @@
 </head>
 <body>
     <div class="controls">
-        <button class="control-button" id="add-ele-div" onclick=addTitle()>+ itle
+        <button class="control-button" id="add-ele-div" onclick=addTitle()>+ Title
         </button>
         <button class="control-button" id="add-subtitle" onclick=addSubtitle()>+ Subtitle
         </button>
         <button class="control-button" id="add-paragraph" onclick=addParagraph()>+ Para
         </button>
-        <button class="control-button" id="print-btn" onclick=printPDF()>Print 
+        <button class="control-button" id="add-paragraph" onclick=addIndentParagraph()>- Para
+        </button>
+        <button class="control-button" id="add-paragraph" onclick=addDblIndentParagraph()>-- Para
         </button>
         <button id="add-arrow" class="control-button" onClick=addArrow()>+ Arrow</button>
         <button id="add-page-height" class="control-button" onClick=addPage()>+ Page</button>
         <button class="control-button" id="dec-page-height" onClick=decPage()>- Page</button>
         <button class="control-button" id="add-box" onClick=addBox()>+ Box</button>
         <button id="done-btn" class="control-button" onClick=complete()>Done</button>
+        <button class="control-button" id="print-btn" onclick=printPDF()>Print 
+        </button>
         <label class="custom-file-upload">
             <input type="file" id="add-img" >
             Upload Image

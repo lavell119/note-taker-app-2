@@ -26,7 +26,7 @@ addImgBtn.addEventListener("change", () => {
 });
 
 //Append Ele-Div Master function
-let createSubmitField=function(type, title){
+let createSubmitField=function(type, title, classParam){
   elementType = type
   elementTitle = title
   const eleDiv =document.createElement('div')
@@ -56,6 +56,12 @@ let createSubmitField=function(type, title){
       eleDiv2.appendChild(innerElement)
       eleDiv2.classList.add('ele-div')
       contentEle.appendChild(eleDiv2)
+      classParam=classParam
+      //add optional class param
+      if(classParam){
+      eleDiv2.classList.add(classParam)
+      console.log('class param active')
+      }
       eleDiv.remove()
       $(eleDiv2).draggable({
               containment: "parent"
@@ -94,6 +100,14 @@ let addParagraph=function(){
   createSubmitField('P', 'Paragraph')
 }
 
+let addDblIndentParagraph=function(){
+  createSubmitField('P', 'addDblIndentParagraph', 'dbl-indent-para')
+}
+
+let addIndentParagraph=function(){
+  createSubmitField('P', 'addIndentParagraph', 'indent-para')
+}
+
 let addPage = function(){
   contentEle.style.height = (contentEle.offsetHeight + 50) + "px"
 }
@@ -115,7 +129,7 @@ let complete = function() {
   arrowWrapper.classList.add('absolute')
   arrow.classList.add('arrow')
   arrow.classList.add('absolute')
-  arrow.src="arrow.png"
+  arrow.src="red-arrow.png"
   const deleteBtn = document.createElement('div')
       deleteBtn.innerHTML="&#10006;"
       deleteBtn.classList.add('delete-btn')
@@ -157,24 +171,28 @@ let addBox = function() {
   box.classList.add('box')
   const form = document.createElement('form')
   const boxInput=document.createElement('textarea')
+  boxInput.classList.add('input-text-area')
   const button = document.createElement('button')
-  //Create bold button
-  const boldBtn=document.createElement('input')
-  boldBtn.type='checkbox'
-  boldBtn.classList.add('bold-btn')
   button.innerText='Submit'
-  boldBtn.innerText= 'Bold'
-  //Append boldBtn to form
-  form.appendChild(button)
-  form.appendChild(boxInput)
-  let isBold=''
-  boldBtn.addEventListener('click', () => {
-      $(boldBtn).change(function(){
-          if(this.checked === true)
-          {isBold ='true'}
-      })
-  })
-  form.appendChild(boldBtn)
+  button.classList.add('submit-btn')
+  //Create bold button
+  // const boldBtn=document.createElement('input')
+  // boldBtn.type='checkbox'
+  // boldBtn.classList.add('bold-btn')
+  // button.innerText='Submit'
+  // boldBtn.innerText= 'Bold'
+  // //Append boldBtn to form
+     form.appendChild(boxInput)
+     form.appendChild(button)
+
+  // let isBold=''
+  // boldBtn.addEventListener('click', () => {
+  //     $(boldBtn).change(function(){
+  //         if(this.checked === true)
+  //         {isBold ='true'}
+  //     })
+  // })
+    //  form.appendChild(boldBtn)
   form.addEventListener('submit', function(e){
       const paragraph=document.createElement('p')
       e.preventDefault()
@@ -182,12 +200,12 @@ let addBox = function() {
       const box2=document.createElement('span')
       paragraph.innerHTML=boxInput.value
       box2.classList.add('text-box')
-      if(isBold==='true'){
-          box2.classList.add('bold')
-      }
+      // if(isBold==='true'){
+      //     box2.classList.add('bold')
+      // }
       box2.appendChild(paragraph)
       box2.addEventListener('dblclick', function(){
-          box2.classList.toggle("hide")
+          box2.classList.toggle("hide-box-border")
       })
       //Create delete button
       const deleteBtn = document.createElement('div')
@@ -205,5 +223,4 @@ let addBox = function() {
   })
   box.appendChild(form)
   contentEle.appendChild(box)
-  $(box).resizable()
 }

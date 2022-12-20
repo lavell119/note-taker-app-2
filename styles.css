@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
+    font-family: arial;
 }
 
 .controls {
@@ -12,7 +13,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-
+    display: flex;
 }
 
 body { 
@@ -30,14 +31,19 @@ body {
 
 }
 
+.red {
+    background: red;
+}
+
 .control-button {
     height: 65px;
     width: 65px;
+    border: 2px solid rgb(0, 183, 255);
     border-radius: 5px;
-    color: yellow;
+    color: rgb(0, 183, 255);
     cursor: pointer;
     font-weight: bold;
-    background: red;
+    background: rgb(68, 68, 68);
 }
 
 .ele-div {
@@ -91,14 +97,36 @@ image {
 }
 
 .box {
-    height: 300px;
+    height: 200px;
     width: 300px;
     border: 2px solid black;
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box input {
+    display: block;
+    background: red;
+    width: 150px;
+    height: 100px;
+}
+
+.box button {
+    display: block;
+    padding: 7px;
+    border-radius: 4px;
+    margin: auto;
 }
 
 .hide {
     display: none;
+}
+
+.hide-box-border {
+    border: none;
 }
 
 .upload-img {
@@ -118,21 +146,85 @@ input {
 }
 
 .custom-file-upload {
-    background: green;
+    background: rgb(168, 168, 168);
 }
 
 input[type="file"] {
     display: none;
 }
 
+.input-text-area {
+    height: 130px;
+    width: 250px;
+    border: 2px solid black;
+}
+
 .custom-file-upload {
     height: 50px;
     width: 60px;
     border-radius: 5px;
-    color: yellow;
+    color: rgb(0, 183, 255);
     cursor: pointer;
     font-weight: bold;
-    background: green;
+    background: rgb(68, 68, 68);
     padding: 5px;
-    border: 1px solid white;
+    border: 1px solid rgb(0, 183, 255);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.control-button:hover {
+    background: rgb(100, 100, 100);
+}
+
+.dbl-indent-para {
+    padding-left: 100px;
+}
+
+.indent-para {
+    padding-left: 50px;
+}
+
+.submit-btn {
+    background: black;
+    color: white;
+}
+
+.submit-field {
+    border: 1px solid black;
+    height: 150px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 7px;
+}
+
+.submit-field form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.submit-field form textarea {
+    width: 400px;
+    height: 80px;
+    border: 1px solid black;
+}
+
+.submit-field input {
+    display: block;
+}
+
+.submit-field button {
+    display: block;
+    padding: 5px;
+    border-radius: 4px;
 }
