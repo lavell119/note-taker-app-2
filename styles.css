@@ -2,7 +2,6 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-    font-family: arial;
 }
 
 .controls {
@@ -44,6 +43,8 @@ body {
     cursor: pointer;
     font-weight: bold;
     background: rgb(68, 68, 68);
+    font-family: arial;
+
 }
 
 .ele-div {
@@ -56,6 +57,10 @@ h1 {
     text-align: center;
 }
 
+h3 { 
+    text-align: center;
+}
+
 image {
     position: absolute;
 }
@@ -63,6 +68,7 @@ image {
 .absolute {
     position: absolute;
 }
+
 
 .delete-btn {
     height: 15px;
@@ -78,11 +84,14 @@ image {
 .arrow-wrapper {
     width:80px;
     position: absolute;
+    z-index: 11;
 }
 
 .arrow {
     width: 80px;
     position: absolute;
+    z-index: 11;
+
 }
 
 .text-box {
@@ -157,6 +166,7 @@ input[type="file"] {
     height: 130px;
     width: 250px;
     border: 2px solid black;
+    
 }
 
 .custom-file-upload {
