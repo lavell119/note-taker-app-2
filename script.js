@@ -19,11 +19,25 @@ addImgBtn.addEventListener("change", () => {
   reader.addEventListener("load", () => {
     let img = document.createElement('img')
     img.src=reader.result
-    contentEle.appendChild(img)
-    img.classList.add('absolute')
-    $(img).draggable()
-  });
-});
+
+    //add delete button
+    const deleteBtn = document.createElement('div')
+      deleteBtn.innerHTML="&#10006;"
+      deleteBtn.classList.add('delete-btn')
+      const img_wrapper=document.createElement('div')
+      img_wrapper.appendChild(img)
+      img_wrapper.appendChild(deleteBtn)
+    
+    contentEle.appendChild(img_wrapper)
+    img_wrapper.classList.add('absolute')
+    deleteBtn.addEventListener('click', () => {
+      let btn=deleteBtn 
+      $(btn).parent().remove()
+  })
+    
+    $(img_wrapper).draggable()
+  })
+})
 
 //Append Ele-Div Master function
 let createSubmitField=function(type, title, classParam){
@@ -35,11 +49,12 @@ let createSubmitField=function(type, title, classParam){
   const submitField=document.createElement('div')
   const inputForm=document.createElement('form')
   const eleTitle=document.createElement('h3')
-  eleTitle.innerText=elementTitle + ' content'
+  eleTitle.innerText=elementTitle
   eleTitle.classList.add('ele-title')
   eleDiv.appendChild(eleTitle)
   //Create text-area for input box
   const textArea=document.createElement('textarea')
+  textArea.classList.add('text-area')
   //Create btn for input box
   const submitBtn=document.createElement('button')
   submitBtn.innerText='Submit'
@@ -95,6 +110,7 @@ let addTitle=function(){
 let addSubtitle=function(){
   createSubmitField('H3', 'Subtitle')   
 }
+
 
 let addParagraph=function(){
   createSubmitField('P', 'Paragraph')
@@ -224,3 +240,87 @@ let addBox = function() {
   box.appendChild(form)
   contentEle.appendChild(box)
 }
+
+
+
+//select control buttons
+const controlBtn = document.querySelectorAll(".control-button")
+
+//select control button images
+const controlBtnImgs = document.querySelectorAll(".control-btn-img")
+
+
+let controlButtonImages = [
+  'images/title.png',
+  'images/h3.png',
+  'images/reg-para.png',
+  'images/indent.png',
+  'images/dbl-indent.png',
+  'images/arrow.png',
+  'images/plus.png',
+  'images/minus.png',
+  'images/text-box.png',
+  'images/done.png', 
+  'images/save.png',
+  'images/upload.png',
+
+]
+
+let whiteControlButtonImages = [
+  'images/white/title.png',
+  'images/white/h3.png',
+  'images/white/reg-para.png',
+  'images/white/indent.png',
+  'images/white/dbl-indent.png',
+  'images/white/arrow.png',
+  'images/white/plus.png',
+  'images/white/minus.png',
+  'images/white/text-box.png',
+  'images/white/done.png', 
+  'images/white/save.png',
+  'images/white/upload.png',
+]
+
+let blackControlButtonImages = [
+  'images/black/title.png',
+  'images/black/h3.png',
+  'images/black/reg-para.png',
+  'images/black/indent.png',
+  'images/black/dbl-indent.png',
+  'images/black/arrow.png',
+  'images/black/plus.png',
+  'images/black/minus.png',
+  'images/black/text-box.png',
+  'images/black/done.png', 
+  'images/black/save.png',
+  'images/black/upload.png',
+]
+
+const controlBtnsArray = Array.prototype.slice.call(controlBtn)
+console.log(controlBtnsArray)
+
+controlBtn.forEach(btn=>{
+  btn.addEventListener('mouseover', function(){
+    let index = controlBtnsArray.indexOf(btn)
+    console.log(index)
+    btn.style.backgroundColor="white"
+    btn.style.borderColor="black"
+    
+    console.log(btn.firstChild)
+    btn.firstChild.src=blackControlButtonImages[index]
+})
+})
+  
+controlBtn.forEach(btn=>{
+  btn.addEventListener('mouseleave', function(){
+    let index = controlBtnsArray.indexOf(btn)
+    btn.style.backgroundColor="black"
+    btn.style.borderColor="white"
+    btn.firstChild.src=whiteControlButtonImages[index]
+
+
+})
+})
+
+
+

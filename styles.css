@@ -5,7 +5,7 @@
 }
 
 .controls {
-    background: rgb(68, 68, 68);
+    background: rgb(100, 100, 100);
     width: 100%;
     height: 70px;
     display: flex;
@@ -22,12 +22,17 @@ body {
 }
 
 .content-div {
+    padding: 15px;
     width: 800px;
     height: 600px;
+    border: 1px solid black;
     background: white;
     margin: auto;
     position: relative;
 
+}
+
+#img-upload{
 }
 
 .red {
@@ -37,12 +42,12 @@ body {
 .control-button {
     height: 65px;
     width: 65px;
-    border: 2px solid rgb(0, 183, 255);
+    border: 2px solid white;
     border-radius: 5px;
     color: rgb(0, 183, 255);
     cursor: pointer;
     font-weight: bold;
-    background: rgb(68, 68, 68);
+    background: black;
     font-family: arial;
 
 }
@@ -155,7 +160,6 @@ input {
 }
 
 .custom-file-upload {
-    background: rgb(168, 168, 168);
 }
 
 input[type="file"] {
@@ -173,12 +177,11 @@ input[type="file"] {
     height: 50px;
     width: 60px;
     border-radius: 5px;
+    border: 2px solid black;
     color: rgb(0, 183, 255);
+    background: white;
     cursor: pointer;
     font-weight: bold;
-    background: rgb(68, 68, 68);
-    padding: 5px;
-    border: 1px solid rgb(0, 183, 255);
     text-align: center;
     display: flex;
     align-items: center;
@@ -204,7 +207,7 @@ input[type="file"] {
 }
 
 .submit-field {
-    border: 1px solid black;
+    padding-top: 10px;
     height: 150px;
     width: 500px;
     display: flex;
@@ -212,7 +215,14 @@ input[type="file"] {
     justify-content: space-between;
     text-align: center;
     border-radius: 7px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
 }
+
+textarea {
+    outline: none;
+}
+
 
 .submit-field form {
     height: 100%;
@@ -237,4 +247,9 @@ input[type="file"] {
     display: block;
     padding: 5px;
     border-radius: 4px;
+}
+
+.img_wrapper .delete-btn {
+    position: absolute;
+    top: -100px;
 }
