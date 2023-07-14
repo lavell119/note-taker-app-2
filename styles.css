@@ -257,3 +257,21 @@ textarea {
 .text-box-font-size {
     font-size: 11px;
 }
+
+.w-w {
+    background: red;
+    height: 50px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.w-w input {
+    background-color: aqua;
+    height: 10px;
+}
+
+.white {
+    color: white;
+}

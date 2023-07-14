@@ -183,7 +183,22 @@ let complete = function() {
 }
 
 let addBox = function() {
+  let white=false
   const box = document.createElement('div')
+  //create white-text radio buttons
+  const white_wrapper=document.createElement('div')
+  const radioButton=document.createElement('input')
+  radioButton.type="radio"
+  radioButton.onChange=()=>{
+    if(radioButton.checked){
+      white=true
+    }
+  }
+  white_wrapper.appendChild(radioButton)
+  white_wrapper.classList.add('w-w')
+  box.appendChild(white_wrapper)
+
+
   box.classList.add('box')
   const form = document.createElement('form')
   const boxInput=document.createElement('textarea')
@@ -211,6 +226,10 @@ let addBox = function() {
     //  form.appendChild(boldBtn)
   form.addEventListener('submit', function(e){
       const paragraph=document.createElement('p')
+      if(white){
+        console.log('white')
+        paragraph.classList.add("white")
+      }
       e.preventDefault()
       box.remove()
       const box2=document.createElement('span')
@@ -220,6 +239,8 @@ let addBox = function() {
       //     box2.classList.add('bold')
       // }
       box2.appendChild(paragraph)
+      
+
       box2.addEventListener('dblclick', function(){
           box2.classList.toggle("hide-box-border")
       })
